@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery DOM Events</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+
+
+<script>
+	jQuery(document).ready(function(){
+
+		// start add class
+  		jQuery(".exampleAddClass #btn").click(function(){
+    		jQuery(".exampleAddClass p").addClass("newClass");
+    		jQuery(".exampleAddClass #mul").addClass("newClass newClassB newClassC");
+  		});
+  		// end class
+
+  		// start remove class
+  		jQuery(".exampleRemoveClass #btn").click(function(){
+    		jQuery(".exampleRemoveClass p").removeClass("newClass");
+    		jQuery(".exampleRemoveClass #mul").removeClass("newClass newClassB newClassC");
+  		});
+  		// end remove class
+
+  		// start toggle class
+  		jQuery(".exampleToggleClass #btn").click(function(){
+    		jQuery(".exampleToggleClass p:not(#mul)").toggleClass("newClass");
+    		jQuery(".exampleToggleClass p#mul").toggleClass("newClassB newClass newClassC");
+  		});
+  		// end toggle class
+
+	});
+</script>
+
+<style>
+	.newClass
+	{
+		color: green;
+		font-size: 30px;
+	}
+	.newClassB
+	{
+		font-weight: bold;
+	}
+	.newClassC
+	{
+		text-decoration: underline;
+	}
+</style>
+
+<body>
+	<h1>jQuery Manipulating CSS</h1>
+	<p>addClass() - Adds one or more classes to the selected elements</p>
+	<p>removeClass() - Removes one or more classes from the selected elements</p>
+	<p>toggleClass() - Toggles between adding/removing classes from the selected elements</p>
+	<p>css() - Sets or returns the style attribute</p>
+
+
+
+	<h3>1: jQuery addClass() Method</h3>
+	<div class="exampleAddClass">
+		<p>Assigned new class to this paragraph.</p>
+		<p id="mul">Assigned more then one class to this paragraph.</p>
+		<button id="btn">Add Class</button>
+	</div>
+
+	<h3>2: jQuery removeClass() Method</h3>
+	<div class="exampleRemoveClass">
+		<p class="newClass">Remove assigned class to this paragraph.</p>
+		<p id="mul" class="newClass newClassB newClassC">Remove more then one class to this paragraph.</p>
+		<button id="btn">Remove Class</button>
+	</div>
+
+	<h3>3: jQuery toggleClass() Method</h3>
+	<div class="exampleToggleClass">
+		<p id="not">Assigned new class to this paragraph.</p>
+		<p id="mul">Assigned more then one class to this paragraph.</p>
+		<button id="btn">Toggle Class</button>
+	</div>
+
+
+</body>
+
+</html>

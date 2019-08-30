@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Traversing</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<script>
+	jQuery(document).ready(function(){
+
+		// start of parent()
+		jQuery('.exampleParent #btn').click(function(){
+			jQuery('.exampleParent li').parent().css({'color':'red'});
+		});
+		// end of parent()
+
+		// start of parents()
+		jQuery('.exampleParent #btn2').click(function(){
+			jQuery('.exampleParent p').parents().css({'color':'green'});
+		});
+		// end of parents()
+
+		// start of parentsUntil()
+		jQuery('.exampleParentsUntil #btn').click(function(){
+			jQuery('.exampleParentsUntil p').parentsUntil('div').css({'color':'pink'});
+		});
+		// end of parentsUntil()
+
+		// start of children()
+		jQuery('.exampleChildren #btn').click(function(){
+			jQuery('.exampleChildren #li_1 span').children().css({'color':'pink'});
+		});
+		jQuery('.exampleChildren #btn2').click(function(){
+			jQuery('.exampleChildren ul').children('#li_1 span p').css({'color':'yellow'});
+		});
+		// end of children()
+
+		// start of find()
+		jQuery('.exampleFind #btn').click(function(){
+			jQuery('.exampleFind ul').find('span').css({'color':'Red'});
+		});
+		jQuery('.exampleFind #btn2').click(function(){
+			jQuery('.exampleFind div').find('h5').css({'color':'yellow'});
+		});
+		// end of find()
+
+		// start of siblings()
+		jQuery('.exampleSiblings #btn').click(function(){
+			jQuery('.exampleSiblings h2').siblings().css({'color':'Red'});
+		});
+		// end of siblings()
+
+		// start of first()
+		jQuery('.exampleFirst #btn').click(function(){
+			jQuery('.exampleFirst p').first().css({'color':'Red'});
+		});
+		// end of first()
+
+		// start of last()
+		jQuery('.exampleLast #btn').click(function(){
+			jQuery('.exampleLast p').last().css({'color':'Green'});
+		});
+		// end of last()
+
+		// start of eq()
+		jQuery('.exampleEQ #btn').click(function(){
+			jQuery('.exampleEQ p').eq(1).css({'color':'pink'});
+		});
+		// end of last()
+
+		// start of filter()
+		jQuery('.exampleFilter #btn').click(function(){
+			jQuery('.exampleFilter p').filter('#intro').css({'color':'pink'});
+		});
+		// end of filter()
+
+		// start of not()
+		jQuery('.exampleNot #btn').click(function(){
+			jQuery('.exampleNot p').not('#intro').css({'color':'red'});
+		});
+		// end of not()
+
+		// start of html()
+		jQuery('.exampleHTML #btn').click(function(){
+			jQuery('.exampleHTML').html("<p>Html <b>tester</b></p>");
+		});
+		// end of html()
+
+	});
+</script>
+
+<style>
+</style>
+
+<body>
+
+	<h1>jQuery Traversing - Ancestors</h1>
+	<p>Traversing is a Parent child relationship.</p>
+	<p>You can use this relation to find any selector e.g div, class, tag, id</p>
+
+
+	<h3>1: jQuery parent() Method</h3>
+	<div class="exampleParent">
+		<h5>Menu</h5>
+		<ul class="list">
+			ul list tag
+			<li id="li_1">
+				<span>li span span Home
+					<p>p tag Child</p>
+				</span>
+			</li>
+			<li>
+				<span>li span About</span>
+			</li>
+			<li>
+				<span>li span Contact</span>
+			</li>
+		</ul>
+		<button id="btn">Parent of li</button>
+		<button id="btn2">All Parents of p</button>
+	</div>
+	
+
+	<h3>2: jQuery parentsUntil() Method</h3>
+	<div class="exampleParentsUntil">
+		<div>
+			<h5>Menu</h5>
+		</div>
+		<ul class="list">
+			ul list tag
+			<li id="li_1">
+				<span>li span span Home
+					<p>p tag Child</p>
+				</span>
+			</li>
+			<li>
+				<span>li span About</span>
+			</li>
+			<li>
+				<span>li span Contact</span>
+			</li>
+		</ul>
+		<button id="btn">Parents of p until div</button>
+	</div>
+
+	<h3>3: jQuery children() Method</h3>
+	<div class="exampleChildren">
+		<div>
+			<h5>Menu</h5>
+		</div>
+		<ul class="list">
+			ul list tag
+			<li id="li_1">
+			
+				<span>li span span Home
+					<p>p tag Child</p>
+				</span>
+			</li>
+			<li>
+				<span>li span About</span>
+			</li>
+			<li>
+				<span>li span Contact</span>
+			</li>
+		</ul>
+		<button id="btn">Children span</button>
+		<button id="btn2">All Children ul</button>
+	</div>
+
+	<h3>4: jQuery find() Method</h3>
+	<div class="exampleFind">
+		<div>
+			<h5>Menu</h5>
+		</div>
+		<ul class="list">
+			ul list tag
+			<li id="li_1">
+				<span> li span Home
+					<p>p tag Child</p>
+				</span>
+			</li>
+			<li>
+				<span>li span About</span>
+			</li>
+			<li>
+				<span>li span Contact</span>
+			</li>
+		</ul>
+		<button id="btn">Find all span</button>
+		<button id="btn2">Find h5</button>
+	</div>
+
+	<h3>5: jQuery siblings Method</h3>
+	<div class="exampleSiblings">div (parent)
+  		<p>p</p>
+  		<span>span</span>
+  		<h2>h2</h2>
+  		<h3>h3</h3>
+  	 	<p>p</p>
+  	 	<button id="btn">Sibling of H2</button>
+	</div>
+
+	<h3>5: The first(), last(), eq(), filter() and not() Methods</h3>
+	<p>The most basic filtering methods are first(), last() and eq(), which allow you to select a specific element based on its 	position in a group of elements.</p>
+	<p>Other filtering methods, like filter() and not() allow you to select elements that match, or do not match, a certain criteria.
+	</p>
+
+	<h5>first()</h5>
+	<div class="exampleFirst">
+		<p>First Elemet of div</p>
+		<p>Second Elemet of div</p>
+		<p>Third Elemet of div</p>
+		<button id="btn">div First Element</button>	
+	</div>
+	
+	<h5>last()</h5>
+	<div class="exampleLast">
+		<p>First Elemet of div</p>
+		<p>Second Elemet of div</p>
+		<p>Third Elemet of div</p>
+		<button id="btn">div Last Element</button>	
+	</div>
+	
+	<h5>eq()</h5>
+	<p>The eq() method returns an element with a specific index number of the selected elements.
+	<p>The index numbers start at 0, so the first element will have the index number 0 and not 1. The following example
+		selects the second <p> 
+	<p>element (index number 1):</p>
+	<div class="exampleEQ">
+		<p>First Elemet of div</p>
+		<p>Second Elemet of div</p>
+		<p>Third Elemet of div</p>
+		<button id="btn">div eq Element</button>	
+	</div>
+
+	<h5>filter()</h5>
+	<p>The filter() method lets you specify a criteria. Elements that do not match the criteria are removed from the selection,
+		and those that match will be returned.</p>
+	<p>The following example returns all <p> 
+	<p>elements with class name "intro":</p>
+	<br/>
+	<div class="exampleFilter">
+		<p>First Elemet of div</p>
+		<p>Second Elemet of div</p>
+		<p id="intro">Third Elemet of div</p>
+		<p>Four Elemet of div</p>
+		<p id="intro">Fifth Elemet of div</p>
+		<p>Six Elemet of div</p>
+		<button id="btn">Filter with intro id</button>	
+	</div>
+
+	<h5>not()</h5>
+	<p>The not() method returns all elements that do not match the criteria.</p>
+	<p>Tip: The not() method is the opposite of filter().<p> 
+	<p>The following example returns all <p> elements that do not have class name "intro":</p>
+	<br/>
+	<div class="exampleNot">
+		<p>First Elemet of div</p>
+		<p>Second Elemet of div</p>
+		<p id="intro">Third Elemet of div</p>
+		<p>Four Elemet of div</p>
+		<p id="intro">Fifth Elemet of div</p>
+		<p>Six Elemet of div</p>
+		<button id="btn">p tag not(intro) id</button>	
+	</div>
+
+	<h3>6: html()</h3>
+	<div class="exampleHTML">
+		<p id="para"></p>
+		<p>Hello Workd</p>
+		<button id="btn">html</button>
+	</div>
+
+
+</body>
+</html>

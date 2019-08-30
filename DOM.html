@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery DOM Events</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<script>
+	jQuery(document).ready(function(){
+
+		// start of text()
+		jQuery("#btn1").click(function(){
+    		alert("Text: " + jQuery("#test").text());
+  		});
+  		// end of text()
+
+  		// start of hmtl()
+  		jQuery("#btn2").click(function(){
+    		alert("HTML: " + jQuery("#test").html());
+  		});
+  		// end of html()
+
+  		// start of value()
+  		jQuery("#btn").click(function(){
+    		alert("Value: " + jQuery("#field").val());
+  		});
+  		// end of value()
+
+  		// start attr()
+  		jQuery(".exampleAttribute button").on("click",function(){
+    		alert(jQuery("#w3s").attr("href"));
+  		});
+  		//end attr()
+
+  		// start of set text
+  		jQuery(".exmpleText #test1").on("click",function(){
+    		jQuery("#test1").text("I am new text.");
+  		});
+  		//end of set text
+
+  		// start of set html
+  		jQuery(".exmpleText #test2").on("mousedown",function(){
+    		jQuery("#test2").html("<b>Hello World</b>");
+  		});
+  		//end of set html
+
+  		// start of set value
+  		jQuery(".exmpleText #btn").click(function(){
+    		jQuery("#test3").val("Junaid Usman");
+  		});
+  		// end of set value
+
+  		// start of set attribute value
+  		jQuery(".exampleSetAttr #btn").click(function(){
+    		jQuery("#sethref").attr("href","https://www.youtube.com");
+  		});
+  		// end of set attribute value
+  	
+
+
+	});
+</script>
+
+<body>
+	
+	<h1>DOM = Document Object Model Manipulation </h1>
+	<p>jQuery contains powerful methods for changing and manipulating HTML elements and attributes.</p>
+	<p>The DOM defines a standard for accessing HTML and XML documents:</p>
+	<p>The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document."</p>
+
+
+	<h3>1: Get Content: text(), html(), and val()</h3>
+	<div class="example">
+		<p id="test">Get this paragraph <b>bold</b> value to Jquery.</p>
+		<button id="btn1">Show Text</button>
+		<button id="btn2">Show HTML</button>
+	</div>
+
+	<div class="exampleValue">
+		<p>Get input field value using val().</p>
+		<input type="text" name="" id="field" value="Junaid Usman"/>
+		<button id="btn">Show/Get Value</button>
+	</div>
+
+	<div class="exampleAttribute">
+		<p>Get Attributes value - attr()</p>
+		<p>The jQuery attr() method is used to get attribute values.</p>
+		
+		<p><a href="https://www.google.com" id="w3s">Google.com</a></p>
+		<button>Show/Get href Value</button>
+	</div>
+
+	<h3>2: Set Content: text(), html() and val()</h3>
+	<div class="exmpleText">
+		<p id="test1">This is a paragraph. Set Text on it, Click on me!</p>
+		<p id="test2">This is another paragraph. Set HTML on it, Click on me!</p>
+		<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+		<button id="btn">Set Value</button>
+	</div>
+
+	<h3>3: Set Attribute Value</h3>
+	<div class="exampleSetAttr">
+		<a href="https://www.google.com" id="sethref">Google.com</a>
+		<button id="btn">Change Attribute Value</button>
+	</div>
+
+</body>
+
+</html>

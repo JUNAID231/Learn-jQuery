@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>jQuery Events</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<script>
+	
+	$(document).ready(function(){
+		
+		// start exampleHide
+  		jQuery(".exampleHide p").click(function(){
+    		jQuery(this).hide();
+  		});
+  		// end exampleHide
+
+  		// start mouse enter
+  		jQuery(".exampleMouseEnter p").mouseenter(function(){
+  			alert("Your mouse entered p!");
+		});
+		// end mouse enter
+
+		// start mouse leave
+  		jQuery(".exampleMouseLeave p").mouseleave(function(){
+  			alert("Your mouse leave p!");
+		});
+		// end mouse leave
+
+		// start mouse down
+  		jQuery(".exampleMouseDown p").mousedown(function(){
+  			alert("Your mouse down p!");
+		});
+		// end mouse down
+
+		// start mouse up
+  		jQuery(".exampleMouseUp p").mouseup(function(){
+  			jQuery(this).css("color","red");
+  		});
+  		// end mouse up
+
+  		// start hover
+  		jQuery(".exampleHover p").hover(function(){
+  			jQuery(this).css("color","green");
+  		});
+  		// end hover
+
+  		// start focus
+  		jQuery(".exampleFocus input").focus(function(){
+  			jQuery(this).css("background-color","Yellow");
+  		});
+  		// end focus
+
+  		// start blur
+  		jQuery(".exampleFocus input").blur(function(){
+  			jQuery(this).css("background-color","Green");
+  		});
+  		// end blur
+
+  		// start blur
+  		jQuery(".exampleOn p").on("click",function(){
+  			jQuery(this).css("background-color","Green");
+  		});
+  		jQuery(".exampleOn #mul").on({
+  			click:function(){
+  				jQuery(this).css("background-color","Green");
+  			},
+  			mouseenter:function(){
+  				jQuery(this).css("background-color","yellow");
+  			},
+  			mouseleave:function(){
+  				jQuery(this).css("background-color","red");
+  			},
+
+  		});
+  		// end blur
+  	
+
+
+
+
+  	});
+
+</script>
+
+<body>
+	<h1>Commonly Used jQuery Event Methods </h1>
+	
+	<h3>1: Hide</h3>
+	<div class="exampleHide">
+		<p>If you click on me, I will disappear.</p>
+		<p>Click me away!</p>
+		<p>Click me too!</p>
+	</div>
+
+	<h3>2: Mousue enter function</h3>
+	<div class="exampleMouseEnter">
+		<p>Mouse enter text</p>	
+	</div>
+
+	<h3>3: Mousue leave function</h3>
+	<div class="exampleMouseLeave">
+		<p>Mouse enter leave text</p>	
+	</div>
+
+	<h3>4: Mousue Down function</h3>
+	<div class="exampleMouseDown">
+		<p>mousedown() works like a click()</p>	
+	</div>
+
+	<h3>4: Mousue Up function</h3>
+	<div class="exampleMouseUp">
+		<p>mouseup() works after when mouse is release</p>	
+	</div>
+
+	<h3>5: Hover function</h3>
+	<div class="exampleHover">
+		<p>hover() works like a mouseenter() and mouseleave()</p>	
+	</div>
+
+	<h3>6: Focus and Blur function</h3>
+	<div class="exampleFocus">
+		<p>focus() is used on HTML form fields</p>
+		<p>blur() is executed when the form field loses focus</p>
+		<input type="text" name="field" />	
+	</div>
+
+	<h3>6: On function</h3>
+	<div class="exampleOn">
+		<p>The on() method attaches one or more event handlers for the selected elements.</p>
+		<p id="mul">The on() method attaches one or more event handlers for the selected elements.</p>
+	</div>
+
+	<h3>7: On function</h3>
+	<div class="exampleOn">
+		<p>The on() method attaches one or more event handlers for the selected elements.</p>
+		<p id="mul">The on() method attaches one or more event handlers for the selected elements.</p>
+	</div>
+
+	
+
+</body>
+
+</html>
+
+
+
